@@ -1,11 +1,18 @@
-public class WebsiteBuilder {
-    public static void main(String[] args) {
-        Website website = new Website();
+/*
+Реализация обстрактного класса для создания вебсайтов
+ */
+public abstract class WebsiteBuilder {
+    Website website;
 
-        website.setName("Visit card");
-        website.setCms("Angular");
-        website.setPrice(500);
+    void createWebsite(){
+        website = new Website();
+    }
 
-        System.out.println(website);
+    abstract void buildName();
+    abstract void buildCms();
+    abstract void buildPrice();
+
+    Website getWebsite(){
+        return website;
     }
 }
